@@ -1,5 +1,7 @@
 # ES添削エージェント v2
-//[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Project Link(https://udify.app/chat/Kv7oGzThbGpXpqHY)
 
 ## 概要
 
