@@ -1,7 +1,6 @@
 # ES添削エージェント v2
-[](
 //[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-)
+
 ## 概要
 
 **ES添削エージェント v2** は、Difyで構築された、エントリーシート（ES）を多角的に分析し、改善点をフィードバックするためのAIアプリケーションです。
