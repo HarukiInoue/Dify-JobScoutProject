@@ -322,31 +322,6 @@ workflow:
       type: custom
       width: 244
     - data:
-        author: Dify
-        desc: ''
-        height: 88
-        selected: false
-        showAuthor: true
-        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Test
-          文章","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"ソニーグループ　2025年夏　職場密着インターンについて、A20.無線・通信・センシング技術【R&D/LSI/ソリューション】というポストにESを提出します。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"志望動機を評価してください。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"開発から顧客サポートまで一貫して携われる環境で、人々に安心を届けるモノづくりのプロセスを体感したく、本インターンシップを強く志望します。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"大学院では無線通信技術、特に無線帯域の効率利用に関する研究に注力し、社会を支える技術の探求に面白さを感じています。並行して、英語学習にも力を注ぎました。その中で留学生の支援を行い、文化や言語の壁に直面する留学生のために未経験ながら交流イベントを企画・運営しました。この挑戦を通じて、多様な背景を持つ人々のニーズを汲み取り、コミュニケーションを通じて安心を届けることに大きなやりがいを覚えました。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"これらの経験から、無線通信を用いて多様な人々の課題に挑戦することに関心を持ちました。最先端技術の開発から、国際的なお客様へのサポートまで、技術者が一貫して幅広く挑戦できる本コースは、私の強みと情熱を最大限に発揮できる理想の環境だと確信しています。本インターンシップでは、自身の専門性と、語学力や課題解決能力を活かし、最先端の技術が社会に実装される現場を肌で感じることで、将来、世界中の人々を繋ぎ、安心させる製品開発に貢献できるエンジニアになるための礎を築きたいです。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
-        theme: blue
-        title: ''
-        type: ''
-        width: 240
-      height: 88
-      id: '1750855344783'
-      position:
-        x: 30
-        y: 80.16504990155195
-      positionAbsolute:
-        x: 30
-        y: 80.16504990155195
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom-note
-      width: 240
-    - data:
         context:
           enabled: false
           variable_selector: []
