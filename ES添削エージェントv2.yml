@@ -1,0 +1,1062 @@
+app:
+  description: ''
+  icon: crocodile
+  icon_background: '#E4FBCC'
+  mode: advanced-chat
+  name: ES添削エージェントv2
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.0.29@9e17ae8073fe53c282e9dc411e76a3cc52f8e794e4cc2499d204502086871c53
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables:
+  - description: ''
+    id: e080f1c3-791d-4698-a7b7-4f74f2af6e19
+    name: original_es_answer
+    selector:
+    - conversation
+    - original_es_answer
+    value: ''
+    value_type: string
+  - description: 会社の企業理念など
+    id: 3d4cc179-0ab6-4cde-b70a-a1969318b816
+    name: company_info
+    selector:
+    - conversation
+    - company_info
+    value: ''
+    value_type: string
+  - description: ESの企業目線でのいい点
+    id: eb1b2c8a-1bf7-4f4c-b781-f6400028aeb5
+    name: ES_appeal
+    selector:
+    - conversation
+    - ES_appeal
+    value: ''
+    value_type: string
+  - description: 文章の矛盾を確認
+    id: 651d2620-695a-45f0-8002-dd1b2fc1e463
+    name: ES_logic
+    selector:
+    - conversation
+    - ES_logic
+    value: ''
+    value_type: string
+  - description: Variable for variant process
+    id: 3866d154-c975-4342-9a51-c65a2098b8f4
+    name: flag
+    selector:
+    - conversation
+    - flag
+    value: 0
+    value_type: number
+  - description: 中間レポートに対するユーザの反応
+    id: 414a7bd8-7c51-4ae5-9198-523f8883267c
+    name: mid_report
+    selector:
+    - conversation
+    - mid_report
+    value: ''
+    value_type: string
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: llm
+      id: 1750857174785-source-17508563945980-target
+      selected: false
+      source: '1750857174785'
+      sourceHandle: source
+      target: '17508563945980'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: llm
+      id: 1750857174785-source-17508563950250-target
+      selected: false
+      source: '1750857174785'
+      sourceHandle: source
+      target: '17508563950250'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: llm
+      id: 1750857174785-source-17508563940420-target
+      selected: false
+      source: '1750857174785'
+      sourceHandle: source
+      target: '17508563940420'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17509240889910-source-1750924524695-target
+      selected: false
+      source: '17509240889910'
+      sourceHandle: source
+      target: '1750924524695'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1750924524695-source-1750924590940-target
+      selected: false
+      source: '1750924524695'
+      sourceHandle: source
+      target: '1750924590940'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: assigner
+      id: 17508563945980-source-1751100058154-target
+      selected: false
+      source: '17508563945980'
+      sourceHandle: source
+      target: '1751100058154'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: assigner
+      id: 17508563950250-source-1751100058154-target
+      selected: false
+      source: '17508563950250'
+      sourceHandle: source
+      target: '1751100058154'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 17508563940420-source-17511009434470-target
+      selected: false
+      source: '17508563940420'
+      sourceHandle: source
+      target: '17511009434470'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: answer
+        targetType: assigner
+      id: 17511009434470-source-1751100058154-target
+      selected: false
+      source: '17511009434470'
+      sourceHandle: source
+      target: '1751100058154'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: assigner
+      id: 1750924524695-source-1751101106552-target
+      selected: false
+      source: '1750924524695'
+      sourceHandle: source
+      target: '1751101106552'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: llm
+      id: 1751100058154-source-17509240889910-target
+      selected: false
+      source: '1751100058154'
+      sourceHandle: source
+      target: '17509240889910'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1751103121486-source-1751097860941-target
+      selected: false
+      source: '1751103121486'
+      sourceHandle: source
+      target: '1751097860941'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1750836346683-source-17511035000570-target
+      selected: false
+      source: '1750836346683'
+      sourceHandle: source
+      target: '17511035000570'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: parameter-extractor
+      id: 17511035000570-true-1750857174785-target
+      source: '17511035000570'
+      sourceHandle: 'true'
+      target: '1750857174785'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 17511035000570-false-1751103121486-target
+      selected: false
+      source: '17511035000570'
+      sourceHandle: 'false'
+      target: '1751103121486'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 開始
+        type: start
+        variables:
+        - label: Company_name
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: Company_name
+        - label: Purpose
+          max_length: 48
+          options: []
+          required: false
+          type: text-input
+          variable: Purpose
+      height: 116
+      id: '1750836346683'
+      position:
+        x: 30
+        y: 666
+      positionAbsolute:
+        x: 30
+        y: 666
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: Dify
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Test
+          文章","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"ソニーグループ　2025年夏　職場密着インターンについて、A20.無線・通信・センシング技術【R&D/LSI/ソリューション】というポストにESを提出します。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"志望動機を評価してください。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"開発から顧客サポートまで一貫して携われる環境で、人々に安心を届けるモノづくりのプロセスを体感したく、本インターンシップを強く志望します。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"大学院では無線通信技術、特に無線帯域の効率利用に関する研究に注力し、社会を支える技術の探求に面白さを感じています。並行して、英語学習にも力を注ぎました。その中で留学生の支援を行い、文化や言語の壁に直面する留学生のために未経験ながら交流イベントを企画・運営しました。この挑戦を通じて、多様な背景を持つ人々のニーズを汲み取り、コミュニケーションを通じて安心を届けることに大きなやりがいを覚えました。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"これらの経験から、無線通信を用いて多様な人々の課題に挑戦することに関心を持ちました。最先端技術の開発から、国際的なお客様へのサポートまで、技術者が一貫して幅広く挑戦できる本コースは、私の強みと情熱を最大限に発揮できる理想の環境だと確信しています。本インターンシップでは、自身の専門性と、語学力や課題解決能力を活かし、最先端の技術が社会に実装される現場を肌で感じることで、将来、世界中の人々を繋ぎ、安心させる製品開発に貢献できるエンジニアになるための礎を築きたいです。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 88
+      id: '1750855344783'
+      position:
+        x: 30
+        y: 80.16504990155195
+      positionAbsolute:
+        x: 30
+        y: 80.16504990155195
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 50
+        model:
+          completion_params:
+            frequency_penalty: 0.5
+            presence_penalty: 0.5
+            temperature: 0.2
+            top_p: 0.75
+          mode: chat
+          name: chatgpt-4o-latest
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: bcf3c22f-37e2-432a-8847-ff55349ef6fc
+          role: system
+          text: '# Role
+
+            あなたは、企業の公開情報から学生のES評価に繋がるインサイトを抽出する、鋭い企業アナリストです。
+
+            '
+        - id: 7bcd3d60-766b-4898-8bc9-cc376b3e05c4
+          role: user
+          text: '
+
+            # Context
+
+            - 企業名: {{#1750836346683.Company_name#}}
+
+
+            # Task
+
+            この企業がどのような人材を求めているか（企業理念、コアバリューなど）を分析し、ESでアピールすべき要素を簡潔にまとめてください。
+
+            志望ポストが明確な場合は、ポストで重要視されている要素の分析も併せて行ってください。
+
+
+            # Output Format
+
+            ## 求める人物像（推測）
+
+            - （箇条書きで3〜5点）
+
+
+            ## 響きやすいキーワード
+
+            - （箇条書きで3〜5点）
+
+
+            ## 事業内容の要点
+
+            - （企業の事業内容と、そこから推測できる価値観を簡潔に記述）
+
+
+            ## 例外処理
+
+            情報を得られない場合は出力を空白（null）とする。'
+        selected: false
+        title: 2A_Specialist_Company_Analyst
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17508563940420'
+      position:
+        x: 1123
+        y: 542
+      positionAbsolute:
+        x: 1123
+        y: 542
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 50
+        model:
+          completion_params:
+            frequency_penalty: 0.3
+            presence_penalty: 0.2
+            temperature: 0.5
+            top_p: 0.85
+          mode: chat
+          name: chatgpt-4o-latest
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: bcf3c22f-37e2-432a-8847-ff55349ef6fc
+          role: system
+          text: '# Role
+
+            あなたは、論理的で分かりやすい文章作成を指導するプロのライティングコーチです。あなたの評価は、文章の「構造」と「表現」に限定されます。内容の良し悪しには言及しません。
+
+            '
+        - id: 2a870fc3-231e-47df-9757-9f1e38f35e97
+          role: user
+          text: '# Input ES Text
+
+            {{#1750857174785.es_answer#}}
+
+
+            # Context
+
+            あなたは、優れたESの書き方（STARメソッドなど）や避けるべき表現に関するナレッジを持っています。
+
+
+            # Task
+
+            以下のES本文を、純粋に「文章」として評価してください。以下の観点から、良い点と改善点を具体的に指摘してください。
+
+
+            - 論理構成: 結論ファーストか？主張と根拠は明確か？やりたいことと動機、経験に矛盾はないか？
+
+            - 構造: STARメソッドなどのフレームワークが意識されているか？
+
+            - 表現: 一文が長すぎないか？冗長な表現はないか？誤字脱字・敬語は適切か？
+
+
+            入力された情報がESとしての体裁を成していない場合は、出力値を空文字列（""）またはnullにしてください。
+
+
+            # Output Format
+
+            ### 文章の良い点（本文を引用して）
+
+            - （箇条書き）
+
+
+            ### 文章の改善点（本文を引用して）
+
+            - （箇条書き）
+
+
+
+            ## 例外処理
+
+            情報を得られない場合は出力を空白（null）とする。'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 314
+        selected: false
+        title: 2B_Specialist_Logic_Coach
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 120
+      id: '17508563945980'
+      position:
+        x: 1457
+        y: 260
+      positionAbsolute:
+        x: 1457
+        y: 260
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: '{{#1750857174785.es_question#}}
+
+            {{#1750857174785.es_answer#}}
+
+            {{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 50
+        model:
+          completion_params: {}
+          mode: chat
+          name: chatgpt-4o-latest
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: bcf3c22f-37e2-432a-8847-ff55349ef6fc
+          role: system
+          text: '# Role
+
+            あなたは、数千人の学生を見てきた経験豊富な採用担当者です。文章の上手さよりも「この学生に会ってみたいか」という観点で評価します。
+
+
+            '
+        - id: 6711862e-0b9e-4fe0-80f1-1095cc2eee0b
+          role: user
+          text: '# Context
+
+            - 設問: {{#1750857174785.es_question#}}
+
+
+            # Task
+
+            以下のES本文が、設問の意図を汲み取り、読み手の心を動かす内容になっているかを評価してください。以下の観点から、魅力的な点と物足りない点を指摘してください。
+
+
+            - 具体性: エピソードは具体的で、情景が目に浮かぶか？
+
+            - 独自性: その人ならではの経験や視点が含まれているか？
+
+            - 訴求力: 強みや人柄、ポテンシャルが説得力をもって伝わるか？
+
+            - 熱意: 文章から意欲やパッションが感じられるか？
+
+
+            入力された情報がESとしての体裁を成していない場合は、出力値を空文字列（""）またはnullにしてください。
+
+
+            # Input ES Text
+
+            {{#1750857174785.es_answer#}}
+
+
+            # Output Format
+
+            ### 内容訴求力レポート
+
+            - **魅力的な点**: （箇条書き）
+
+            - **物足りない点**: （箇条書き）
+
+
+            '
+        selected: true
+        title: 2C_Specialist_Appeal_Consultant
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17508563950250'
+      position:
+        x: 1457
+        y: 420
+      positionAbsolute:
+        x: 1457
+        y: 420
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: "#Task\n入力文から、指定された5項目（会社名、ES設問、ES回答、ユーザーの依頼内容、制約条件）を抽出してください。対応する情報が見つからない場合は空文字列で出力してください。出力は必ず以下のJSON形式で返してください。\n\
+          もし該当する情報が見つからない場合は、そのキーの値を空文字列（\"\"）またはnullにしてください。\n\n#Input\n{{#sys.query#}}\n\
+          \n# 出力変数:\n{\n  \"company_name\": \"（会社名と応募先ポスト(ある場合)）\",\n  \"es_question\"\
+          : \"（ES設問）\",\n  \"es_answer\": \"（ES回答）\",\n  \"user_request\": \"（ユーザーの依頼内容）\"\
+          \n  \"es_constraints\": \"（ES作成の制約条件）\"\n}\n"
+        model:
+          completion_params:
+            frequency_penalty: 0.5
+            presence_penalty: 0.5
+            temperature: 0.2
+            top_p: 0.75
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        parameters:
+        - description: 会社名
+          name: company_name
+          required: false
+          type: string
+        - description: ES設問
+          name: es_question
+          required: false
+          type: string
+        - description: ES回答
+          name: es_answer
+          required: false
+          type: string
+        - description: ユーザーの依頼内容
+          name: user_request
+          required: false
+          type: string
+        - description: 制約条件
+          name: es_constraints
+          required: false
+          type: string
+        query:
+        - '17508553150940'
+        - text
+        reasoning_mode: prompt
+        selected: false
+        title: パラメータ抽出
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1750857174785'
+      position:
+        x: 789
+        y: 260
+      positionAbsolute:
+        x: 789
+        y: 260
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 50
+        model:
+          completion_params:
+            frequency_penalty: 0.3
+            presence_penalty: 0.2
+            temperature: 0.5
+            top_p: 0.85
+          mode: chat
+          name: chatgpt-4o-latest
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: bcf3c22f-37e2-432a-8847-ff55349ef6fc
+          role: system
+          text: 'あなたは、複数の専門家からの報告を統合し、最も重要なポイントを抽出して要約する、優秀な編集長です。
+
+            '
+        - id: 7bcd3d60-766b-4898-8bc9-cc376b3e05c4
+          role: user
+          text: '# Task
+
+            以下の3つの専門家レポートを統合し、ユーザーに示すための一つの「中間フィードバック」を作成してください。
+
+            特に、各レポート間で**関連性の高い点**や**矛盾している点**（例：文章構成は論理的だが、採用担当者視点では熱意が感じられない、など）を指摘することが重要です。
+
+
+            # Input Reports
+
+            - **企業分析レポート**: {{#conversation.company_info#}}
+
+            - **文章構成レポート**:{{#conversation.ES_logic#}}
+
+            - **内容訴求力レポート**:{{#conversation.ES_appeal#}}
+
+
+            # Output Format
+
+            ### 統合分析フィードバック
+
+            - **総評**: （全体を通した簡単なまとめ）
+
+            - **最大の強み**: （3つのレポートから判断できる最も優れた点）
+
+            - **最優先で改善すべき点**: （最もクリティカルな弱点や矛盾点）
+
+            - **その他の改善ポイント**: （箇条書き）'
+        selected: false
+        title: Analyze and Compose
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17509240889910'
+      position:
+        x: 2125
+        y: 405
+      positionAbsolute:
+        x: 2125
+        y: 405
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.3
+            presence_penalty: 0.2
+            temperature: 0.5
+            top_p: 0.85
+          mode: chat
+          name: chatgpt-4o-latest
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 0181a473-1d68-457f-98a4-ca8e3da6f9eb
+          role: system
+          text: 'あなたは、利用者の思考を深めるための的確な質問を投げかける、親身なキャリアコーチです。
+
+            '
+        - id: 4eb24a24-e969-4db0-9bff-48088c095baa
+          role: user
+          text: '# Task
+
+            以下の「統合分析フィードバック」を、ユーザーに分かりやすく提示してください。
+
+            その上で、レポート内の「最優先で改善すべき点」を解決するために、ユーザーに**具体的な情報を求める、または次のアクションを促す質問を1つだけ**投げかけてください。
+
+
+            # Input Feedback
+
+            {{#17509240889910.text#}}
+
+
+            # Output Example
+
+            ESの分析が完了しました。
+
+
+            （ここに「統合分析フィードバック」の内容をMarkdown形式で表示）'
+        selected: false
+        title: 中間レポート
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1750924524695'
+      position:
+        x: 2459
+        y: 405
+      positionAbsolute:
+        x: 2459
+        y: 405
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1750924524695.text#}}'
+        desc: ''
+        selected: false
+        title: 回答 2
+        type: answer
+        variables: []
+      height: 104
+      id: '1750924590940'
+      position:
+        x: 2793
+        y: 405
+      positionAbsolute:
+        x: 2793
+        y: 405
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1751103121486.text#}}'
+        desc: ''
+        selected: false
+        title: 回答 2
+        type: answer
+        variables: []
+      height: 104
+      id: '1751097860941'
+      position:
+        x: 1457
+        y: 694
+      positionAbsolute:
+        x: 1457
+        y: 694
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '17508563945980'
+          - text
+          variable_selector:
+          - conversation
+          - ES_logic
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '17508563950250'
+          - text
+          variable_selector:
+          - conversation
+          - ES_appeal
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '17508563940420'
+          - text
+          variable_selector:
+          - conversation
+          - company_info
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1750857174785'
+          - es_answer
+          variable_selector:
+          - conversation
+          - original_es_answer
+          write_mode: over-write
+        selected: false
+        title: 変数代入 2
+        type: assigner
+        version: '2'
+      height: 172
+      id: '1751100058154'
+      position:
+        x: 1791
+        y: 405
+      positionAbsolute:
+        x: 1791
+        y: 405
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#17508563940420.text#}}'
+        desc: ''
+        selected: false
+        title: 回答 3 (1)
+        type: answer
+        variables: []
+      height: 104
+      id: '17511009434470'
+      position:
+        x: 1457
+        y: 550
+      positionAbsolute:
+        x: 1457
+        y: 550
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1750924524695'
+          - text
+          variable_selector:
+          - conversation
+          - mid_report
+          write_mode: over-write
+        selected: false
+        title: 変数代入 2
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751101106552'
+      position:
+        x: 2793
+        y: 549
+      positionAbsolute:
+        x: 2793
+        y: 549
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4
+          provider: langgenius/openai/openai
+        prompt_template:
+        - role: system
+          text: '# Role
+
+            あなたは、与えられたフィードバックとユーザーの指示に基づき、エントリーシート（ES）の文章を具体的に改善する優秀なリライターです。'
+        - role: user
+          text: '
+
+            # Context
+
+            以下の情報を基に、ESの文章を修正してください。
+
+
+            ## 元のES文章
+
+            {{#conversation.original_es_answer#}}
+
+
+            ## 前回のフィードバック内容
+
+            {{#conversation.mid_report#}}
+
+
+            # User''s Instruction
+
+            ユーザーからの今回の修正指示、もしくは修正されたESは以下の通りです。
+
+            {{#sys.query#}}
+
+
+            # Task
+
+            上記の指示を最優先で反映し、フィードバック内容も考慮しながら、改善されたESの文章を生成してください。
+
+            改善後のES文章のみを、そのままESとして提出できる形式で出力してください。
+
+            修正されたESが入力された場合はESの評価を行ってください。'
+        selected: false
+        title: 修正ループ
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1751103121486'
+      position:
+        x: 1123
+        y: 686
+      positionAbsolute:
+        x: 1123
+        y: 686
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: cf0e205e-9600-4803-9de8-618ea902a873
+            value: '0'
+            varType: number
+            variable_selector:
+            - sys
+            - dialogue_count
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: IF/ELSE (1)
+        type: if-else
+      height: 126
+      id: '17511035000570'
+      position:
+        x: 364
+        y: 666
+      positionAbsolute:
+        x: 364
+        y: 666
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -48.35345125057586
+      y: 67.92471761861555
+      zoom: 0.530500798278639
